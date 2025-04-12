@@ -1,4 +1,4 @@
-![fea-mcp-cover](img/fea-mcp-icon.png)
+![fea-mcp-cover](./img/fea-mcp-icon.png)
 
 # FEA-MCP Server
 An Finite Element Analysis Model Context Protocol Server for AI
@@ -106,6 +106,7 @@ The server provides the following main API functions:
 - `createPoint`: Creates a point/joint
 - `createLine`: Creates a Line/Frame
 - `createSurface`: Creates a Surface/Area
+
 (the following are only available for LUSAS)
 - `createPoints`: Creates multiple points
 - `createLineByPoints`: Creates a line by points
