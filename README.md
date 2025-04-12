@@ -23,9 +23,9 @@ Geometry Creation: Generate points, lines, surfaces, and volumes programmaticall
   - Read model units
 
 ## Future Work
-Model Management: Define materials, sections, loads, and boundary conditions
-Analysis Control: Run simulations and retrieve results
-Coordinate System Support: Work with multiple coordinate systems
+- Model Management: Define materials, sections, loads, and boundary conditions
+- Analysis Control: Run simulations and retrieve results
+- Coordinate System Support: Work with multiple coordinate systems
 
 ## Installation
 
