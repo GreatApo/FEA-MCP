@@ -180,6 +180,9 @@ if config.feaName == "LUSAS":
     sweepPoints = mcp.tool()(lusas.sweepPoints)
     sweepLines = mcp.tool()(lusas.sweepLines)
     sweepSurfaces = mcp.tool()(lusas.sweepSurfaces)
+    getPoints = mcp.tool()(lusas.getPoints)
+    getLines = mcp.tool()(lusas.getLines)
+    select = mcp.tool()(lusas.select)
 
 elif config.feaName == "ETABS":
     # No specific tools to registere yet

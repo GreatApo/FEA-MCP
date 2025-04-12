@@ -116,3 +116,6 @@ The server provides the following main API functions:
 - `sweepPoints`: Sweeps points to create lines
 - `sweepLines`: Sweeps lines to create surfaces
 - `sweepSurfaces`: Sweeps surfaces to create volumes
+- `getPoints`: Get all modelled points
+- `getLines`: Get all modelled lines
+- `select`: Select modelled objects

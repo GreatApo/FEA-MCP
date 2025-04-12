@@ -427,6 +427,61 @@ class Lusas:
             logger.error(f"Error sweeping surfaces: {str(e)}")
             return "Error: Failed to sweep surfaces."
 
+    def getPoints(self) -> str:
+        """Gets all points of the current model."""
+        if self.modeller == None:
+            return "Error: Not connected to LUSAS."
+        
+        try:
+            pnts : list[lpi.IFPoint] = self.modeller.db().getObjects("Points")
+            data = [f"<Point id={pnt.getID()} x={pnt.getX()}, y={pnt.getY()}, z={pnt.getZ()}>" for pnt in pnts]
+            return {' '.join(data)}
+        except Exception as e:
+            logger.error(f"Error getting all points: {str(e)}")
+            return "Error: Failed getting point."
+        
+    def getLines(self) -> str:
+        """Gets all lines of the current model."""
+        if self.modeller == None:
+            return "Error: Not connected to LUSAS."
+        
+        try:
+            lns : list[lpi.IFPoint] = self.modeller.db().getObjects("Lines")
+            data = [f"<Line id={ln.getID()} x1={ln.getStartPoint().getX()}, y1={ln.getStartPoint().getY()}, z1={ln.getStartPoint().getZ()}, x2={ln.getEndPoint().getX()}, y2={ln.getEndPoint().getY()}, z2={ln.getEndPoint().getZ()}>" for ln in lns]
+            return {' '.join(data)}
+        except Exception as e:
+            logger.error(f"Error getting all lines: {str(e)}")
+            return "Error: Failed getting lines."
+        
+    def select(self, points : list[int], lines : list[int], surfaces : list[int], volumes : list[int]) -> str:
+        """
+        Selects objects in the current model.
+        
+        Parameters:
+        points (list[int]): List of point IDs to select.
+        lines (list[int]): List of line IDs to select.
+        surfaces (list[int]): List of surface IDs to select.
+        volumes (list[int]): List of volume IDs to select.
+        """
+        if self.modeller == None:
+            return "Error: Not connected to LUSAS."
+        
+        try:
+            self.modeller.selection().remove("all")
+            for id in points:
+                self.modeller.selection().add("point", id)
+            for id in lines:
+                self.modeller.selection().add("line", id)
+            for id in surfaces:
+                self.modeller.selection().add("surface", id)
+            for id in volumes:
+                self.modeller.selection().add("volume", id)
+            return "Objects selected."
+        
+        except Exception as e:
+            logger.error(f"Error selecting model objects: {str(e)}")
+            return "Error: Failed to select objects."
+
 # LUSAS extensions (not called directly from the server)
     def sweep_Ext(self, trgtObjSet:lpi.IFObjectSet, vector: list[float], hofType:str):
         types = ["Point", "Line", "Surface", "Volume"]
