@@ -1,0 +1,10 @@
+{
+    "server": {
+        "name": "FEA MCP",
+        "version": "1.0.0"
+    },
+    "fea": {
+        "software": "LUSAS",
+        "version": "21.1"
+    }
+}
