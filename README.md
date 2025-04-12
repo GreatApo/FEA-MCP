@@ -14,12 +14,15 @@ Geometry Creation: Generate points, lines, surfaces, and volumes programmaticall
 
 ### Supported Functions
 
-- **Multiple Software Support**: Supports mainstream FEA software including ETABS and LUSAS
-- **Geometric Modelling Functions**:
+- **Multiple Software**: Supports mainstream FEA software including ETABS and LUSAS
+- **Geometric Modelling**:
   - Create Point/Joint
   - Create Line/Frame/Beam/Column
   - Create Volume/Solid
   - Sweep Points/Lines/Surfaces (LUSAS only)
+  - Get modelled Points/lines (LUSAS only)
+  - Select objects (LUSAS only)
+- **Other**:
   - Read model units
 
 ## Future Work
