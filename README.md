@@ -1,4 +1,4 @@
-![fea-mcp-cover](./img/fea-mcp-icon.png)
+![fea-mcp-cover](./img/fea-mcp-icon-long.png)
 
 # FEA-MCP Server
 An Finite Element Analysis Model Context Protocol Server for AI
