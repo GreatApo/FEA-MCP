@@ -1,0 +1,4 @@
+# FEA MCP
+pywin32>=228
+comtypes>=1.4.0
+mcp>=0.1.0
