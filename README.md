@@ -20,7 +20,7 @@ Geometry Creation: Generate points, lines, surfaces, and volumes programmaticall
   - Create Line/Frame/Beam/Column
   - Create Volume/Solid
   - Sweep Points/Lines/Surfaces (LUSAS only)
-  - Get modelled Points/lines (LUSAS only)
+  - Get modelled Points/Lines/Surfaces/Volumes
   - Select objects (LUSAS only)
 - **Other**:
   - Read model units
@@ -80,6 +80,16 @@ The configuration file is located at `src/config.json` and contains the followin
   - `software`: FEA software (ETABS, LUSAS)
   - `version`: software version (e.g. 21.1 for LUSAS)
 
+## AI Clients
+
+### 5ire
+
+Open 5ire > Tools > New, input the following info and then click Save:
+- Tool Key: fea
+- Description: Finite Elements Analysis connection server (ETABS, LUSAS)
+- Command: `python C:\\your_path_to_the_extracted_server\\FEA-MCP\\src\\server.py`
+Then turn on the server and you are good to go!
+
 ### Claude Desktop
 
 Open Claude Desktop > File > Settings > Developer > Edit Config, edit claude_desktop_config.json and add the following.
@@ -99,26 +109,24 @@ Then restart Claude Desktop (from the tray icon, right click > Quit).
 }
 ```
 
-### Service API
+## Service API
 
 The server provides the following main API functions:
 
-- `connectOnSoftware`: Connects on the selected FEA software
-- `getSoftware`: Returns the selected FEA software name and version
-- `getModelUnits`: Returns the model units
-- `createPoint`: Creates a point/joint
-- `createLine`: Creates a Line/Frame
-- `createSurface`: Creates a Surface/Area
+- `get_units`: Returns the model units
+- `create_objects_by_coordinates`: Batch-creates various geometric objects (points, lines/frames, surfaces/areas, volumes/solids)
+- `get_all_geometries`: Returns all the modelled geometric objects (points, lines/frames, surfaces/areas, volumes/solids)
+- `get_points`: Returns all the modelled points
+
+(the following are only available for ETABS)
+- `get_frames`: Returns all the modelled frames
+- `get_areas`: Returns all the modelled areas
 
 (the following are only available for LUSAS)
-- `createPoints`: Creates multiple points
-- `createLineByPoints`: Creates a line by points
-- `createArcByPoints`: Creates an arc by points
-- `createArcByCoordinates`: Creates an arc by coordinates
-- `createSurfaceByLines`: Creates a surface by lines
-- `sweepPoints`: Sweeps points to create lines
-- `sweepLines`: Sweeps lines to create surfaces
-- `sweepSurfaces`: Sweeps surfaces to create volumes
-- `getPoints`: Get all modelled points
-- `getLines`: Get all modelled lines
+- `get_lines`: Returns all the modelled lines
+- `get_surfaces`: Returns all the modelled surfaces
+- `get_volumes`: Returns all the modelled volumes
+- `sweep_points`: Sweeps points to create lines
+- `sweep_lines`: Sweeps lines to create surfaces
+- `sweep_surfaces`: Sweeps surfaces to create volumes
 - `select`: Select modelled objects
