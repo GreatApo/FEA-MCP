@@ -76,6 +76,8 @@ System Requirements:
    
    ```
    pip install pywin32 comtypes mcp
+   //or
+   pip install -r requirements. txt
    ```
 2. Download this repository and save the extracted files locally (e.g. at ```C:\your_path_to_the_extracted_server\FEA-MCP\```).
 3. (Optional) Edit the MCP server configuration file, located at `src/config.json` (see configuration section). By default the server is set to use LUSAS v21.1.
@@ -140,3 +142,18 @@ Open Claude Desktop and navigate to `File > Settings > Developer > Edit Config`,
 
 Caution: update the path and use double backslash!
 Then restart Claude Desktop (from the tray icon, right click > Quit).
+
+#### Visual Studio Code - GitHub Copilot
+
+The MCP server is already setup in `.vscode\mcp.json`. Open the repository folder in visual studio, select `.vscode\mcp.json` and click "Start" above the server name (more info [here](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)).
+
+## 🐞 Bugs
+
+Google's Gemini seems to crash when the `create_objects_by_coordinates` tool is enabled.
+
+## 🐛 Debug
+
+You can test and debug the MCP server using the MCP Inspector by running the following command:
+```
+npx @modelcontextprotocol/inspector mcp run src\server.py
+```

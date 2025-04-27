@@ -1,0 +1,10 @@
+{
+    "servers": {
+        "fea": {
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\src\\server.py"
+            ]
+        }
+    }
+}
