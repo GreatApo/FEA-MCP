@@ -1,3 +1,10 @@
+> [!WARNING]
+> ## This repository has been superseded
+>
+> This project is no longer actively developed. Please use **[LUSAS-MCP-Server](https://github.com/LUSAS-Software/LUSAS-MCP-Server)** instead.
+>
+> The newer project takes a different approach and provides full LUSAS API support.
+
 ![fea-mcp-cover](./img/fea-mcp-icon-long.png)
 
 # FEA-MCP Server
